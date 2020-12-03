@@ -57,6 +57,19 @@ do_start:
 	bl	get_cpuid		// cpuid save to x19
 	mov	x19, x0
 
+	mov x0, #0x30
+	bl print
+	mov x0, #0x31
+	bl print
+	mov x0, #0x32
+	bl print
+	mov x0, #0x33
+	bl print
+	mov x0, #0x0a // '\n'
+	bl print
+
+	//restore x0
+	mov x0, x19
 	/*
 	 * store the cpuid to TPIDR_EL2
 	 */
